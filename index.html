@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sophiae · Synthèse de formation — Intelligence artificielle en éducation</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+<style>
+:root{--v:#5E2F96;--bg:#F8F8F8;--card:#fff;--bd:#EAE6F2;--t:#222;--tx:#555;--ts:#777;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Montserrat,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{color:var(--t);font-weight:800;margin:0}
+.logo{font-weight:800;font-size:22px;color:#000}.logo b{color:var(--v)}
+aside{position:fixed;left:0;top:0;bottom:0;width:250px;background:#fff;border-right:1px solid var(--bd);padding:28px 16px;display:none}
+aside a{display:flex;gap:10px;align-items:center;padding:10px 14px;margin-top:6px;color:var(--tx);text-decoration:none;font-weight:600;font-size:14px;border-left:3px solid transparent;border-radius:0 10px 10px 0}
+aside a.on,.mnav a.on{border-left-color:var(--v);color:var(--v);background:rgba(94,47,150,.06)}
+.mnav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--bd);padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+.mnav .row{display:flex;justify-content:space-between;align-items:center}
+.mnav button{background:none;border:0;color:var(--v);cursor:pointer}
+.mnav nav{display:none;padding-top:8px}.mnav nav.open{display:block}
+.mnav a{display:block;padding:10px;color:var(--tx);text-decoration:none;font-weight:600;border-left:3px solid transparent}
+main{max-width:1024px;margin:0 auto;padding:0 20px}
+@media(min-width:1024px){aside{display:block}.mnav{display:none}main{margin-left:250px;max-width:none;padding:0 40px}main>*{max-width:960px;margin-left:auto;margin-right:auto}}
+section{padding:56px 0;scroll-margin-top:80px}
+.hd{text-align:center;margin-bottom:32px}.hd small{color:var(--v);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+.hd h2{font-size:clamp(24px,4vw,32px);margin:6px 0}.hd p{max-width:42rem;margin:0 auto;color:var(--ts)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;box-shadow:0 8px 30px rgba(94,47,150,.05);padding:24px}
+.grid{display:grid;gap:18px}@media(min-width:720px){.g2{grid-template-columns:1fr 1fr}.g5{grid-template-columns:repeat(5,1fr)}}
+.ic{width:44px;height:44px;border-radius:12px;background:rgba(94,47,150,.08);color:var(--v);display:grid;place-items:center;margin-bottom:12px}
+.ic svg{width:22px;height:22px}
+.hero{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#5E2F96,#4D267A);color:#fff;padding:56px 28px;text-align:center;margin-top:28px}
+.hero:before,.hero:after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.2),transparent 70%)}
+.hero:before{top:-120px;left:-80px}.hero:after{bottom:-140px;right:-60px}
+.hero>*{position:relative}.hero h1{color:#fff;font-size:clamp(28px,5vw,44px);max-width:760px;margin:18px auto}
+.hero p{max-width:640px;margin:0 auto 28px;opacity:.92}
+.badge{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:99px;font-size:13px;font-weight:600}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;padding:12px 22px;border-radius:14px;font:700 14px Montserrat,sans-serif;cursor:pointer;text-decoration:none;border:2px solid transparent;margin:5px}
+.btn svg{width:18px;height:18px}.w{background:#fff;color:var(--v)}.o{background:transparent;color:#fff;border-color:#fff}
+.note{margin-top:18px;background:rgba(94,47,150,.05);display:flex;gap:16px;align-items:flex-start}
+.note .ic{background:var(--v);color:#fff;flex:none;margin:0}
+.pil{text-align:center;padding:18px 12px}.pil .c{width:44px;height:44px;border-radius:50%;color:#fff;font-weight:800;display:grid;place-items:center;margin:0 auto 8px}
+.pil h3{font-size:15px}.pil p{font-size:13px;margin:4px 0 0}
+label{display:block;font-weight:700;font-size:14px;margin-top:16px}small.h{display:block;color:var(--ts);font-size:12px;margin:2px 0 6px}
+textarea{width:100%;min-height:70px;border:1px solid var(--bd);border-radius:12px;padding:10px;font:14px Montserrat,sans-serif;color:var(--t);resize:vertical;background:#fff}
+.pv{margin-top:6px;font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--bg);border-radius:10px;padding:8px 12px;white-space:pre-wrap;color:var(--t);display:none}
+.ex{background:var(--bg);font-family:ui-monospace,Menlo,monospace;font-size:13px;white-space:pre-wrap;color:var(--t)}
+.tool h3{font-size:20px}.tool .top{display:flex;gap:14px;align-items:center;margin-bottom:12px}.tool .top .ic{margin:0}
+.tool h4{margin:18px 0 8px;color:var(--t)}.tool ul{list-style:none;padding:0;margin:0}
+.tool li{display:flex;gap:10px;margin:8px 0;font-size:14px}.tool li svg{flex:none;width:18px;height:18px;color:var(--v);margin-top:2px}
+.tool ol{list-style:none;padding:0;margin:0;counter-reset:n}.tool ol li:before{counter-increment:n;content:counter(n);flex:none;width:22px;height:22px;border-radius:50%;background:var(--v);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.tool .btn{width:100%;margin:20px 0 0;color:#fff}
+footer{text-align:center;padding:36px 0 48px;border-top:1px solid var(--bd);color:var(--ts);font-size:13px}
+html.locked aside,html.locked .mnav,html.locked main,html.locked footer{display:none!important}
+#lk{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;place-items:center;padding:20px}
+html.locked #lk{display:grid}
+#lk .card{max-width:380px;width:100%;text-align:center}
+#lk input{width:100%;border:1px solid var(--bd);border-radius:12px;padding:12px;font:15px Montserrat,sans-serif;margin:16px 0 8px;text-align:center}
+#lk .err{color:#D32F2F;font-size:13px;min-height:20px}
+select{width:100%;border:1px solid var(--bd);border-radius:12px;padding:12px;font:600 15px Montserrat,sans-serif;color:var(--t);background:#fff}
+.tabs{display:flex;gap:8px;margin:16px 0}.tabs button{flex:1;padding:10px;border-radius:12px;border:1px solid var(--bd);background:#fff;font:700 14px Montserrat,sans-serif;color:var(--tx);cursor:pointer}.tabs button.on{background:var(--v);color:#fff;border-color:var(--v)}
+.pc{margin-top:14px}.pc h4{margin:0 0 8px;color:var(--t);font-size:15px}.pc .tx{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--bg);border-radius:10px;padding:10px 12px;color:var(--t);white-space:pre-wrap}
+.pc .btn{margin:10px 0 0;padding:8px 16px;background:#fff;color:var(--v);border-color:var(--bd);font-size:13px}
+</style><script>document.documentElement.classList.add('locked');try{if(sessionStorage.getItem('sph')==='1')document.documentElement.classList.remove('locked')}catch(e){}</script></head><body>
+<div id="lk"><div class="card"><div class="ic" style="margin:0 auto 4px"><i data-lucide="lock"></i></div><p style="margin:12px 0 0">Cette page est protégée. Saisissez le mot de passe pour y accéder.</p><input id="pw" type="password" placeholder="Mot de passe" autocomplete="off"><div class="err" id="er"></div><button class="btn" id="go" style="background:var(--v);color:#fff;width:100%;margin:6px 0 0">Accéder</button></div></div>
+<aside><div id="sn" style="margin-top:8px"></div></aside>
+<div class="mnav"><div class="row"><span style="font-weight:700;color:var(--t)">Menu</span><button id="mb" aria-label="Menu"><i data-lucide="menu"></i></button></div><nav id="mn"></nav></div>
+<main>
+<section id="accueil"><div class="hero"><span class="badge"><i data-lucide="sparkles" style="width:16px;height:16px"></i>Synthèse de formation</span>
+<h1>L'Intelligence Artificielle au service de l'enseignement</h1>
+<p>Un parcours structuré pour comprendre l'IA, maîtriser la rédaction de prompts avec le modèle ACTIF, et exploiter les outils qui transforment la préparation pédagogique : Perplexity et Gemini NotebookLM.</p>
+<a class="btn w" href="#fondamentaux"><i data-lucide="brain"></i>Commencer par les fondamentaux</a><a class="btn o" href="#prompt-actif"><i data-lucide="arrow-down"></i>Aller au générateur ACTIF</a></div></section>
+
+<section id="donnees"><div class="hd"><small>Avant de commencer</small><h2>Protéger les données</h2><p>Avant tout usage de l'IA, quelques réflexes simples pour protéger les élèves, les familles et les collègues.</p></div>
+<div class="card note" style="margin-top:0"><div class="ic"><i data-lucide="shield-check"></i></div><div><h3 style="font-size:18px">Les réflexes essentiels</h3><ul style="list-style:none;padding:0;margin:8px 0 0">
+<li style="margin:6px 0">• <b>Ne saisissez jamais de données personnelles identifiantes</b> (noms, adresses, situations individuelles, santé, notes nominatives) dans un outil grand public.</li>
+<li style="margin:6px 0">• <b>Anonymisez</b> : remplacez les noms par « l'élève A », « la famille B ».</li>
+<li style="margin:6px 0">• <b>Utilisez votre compte professionnel</b>, jamais un compte personnel, et uniquement les outils validés par votre établissement.</li>
+<li style="margin:6px 0">• <b>Relisez avant de diffuser</b> : vous restez responsable du contenu.</li>
+<li style="margin:6px 0">• <b>En cas de doute</b>, demandez à votre délégué à la protection des données (DPD/DPO) ou à votre référent numérique.</li></ul></div></div>
+<div class="card" style="margin-top:18px"><h3 style="font-size:20px">Pourquoi Microsoft 365 est une solution plus sûre pour les documents administratifs</h3>
+<p style="font-size:14px;margin:8px 0 0">Pour un personnel administratif qui manipule des courriers, des tableaux et des comptes rendus, travailler avec Copilot dans Microsoft 365 (connecté à votre compte professionnel) est préférable à un chatbot grand public, pour ces raisons :</p>
+<div class="tool"><ul style="margin-top:10px">
+<li><i data-lucide="check-circle-2"></i><span><b>Un cadre contractuel professionnel :</b> avec un compte professionnel, Microsoft agit en sous-traitant au titre de son addendum de protection des données, avec un engagement de conformité au RGPD et l'EU Data Boundary (traitement dans l'Union européenne).</span></li>
+<li><i data-lucide="check-circle-2"></i><span><b>Pas d'entraînement sur vos données :</b> vos requêtes, les réponses et les données consultées ne servent pas à entraîner les modèles de fondation.</span></li>
+<li><i data-lucide="check-circle-2"></i><span><b>Des droits d'accès respectés :</b> Copilot ne présente que les documents auxquels vous avez déjà accès, selon les autorisations existantes.</span></li>
+<li><i data-lucide="check-circle-2"></i><span><b>Un contrôle par l'établissement :</b> journalisation, politiques de sécurité et réglages gérés par les administrateurs.</span></li>
+<li><i data-lucide="check-circle-2"></i><span><b>Vos documents restent dans l'écosystème :</b> Word, Excel, Outlook et Teams sont déjà utilisés ; inutile de copier-coller vers un site tiers.</span></li></ul></div></div>
+<div class="card note" style="margin-top:18px"><div class="ic"><i data-lucide="shield-alert"></i></div><div><h3 style="font-size:18px">Les limites à connaître</h3><p style="margin:6px 0 0">Ces garanties s'appliquent à la connexion avec un compte professionnel ou scolaire (repérez le bouclier vert dans Copilot Chat) et ne vous dispensent pas d'anonymiser. Les recherches web et certains modèles tiers peuvent sortir du périmètre de l'EU Data Boundary. D'autres offres professionnelles (ChatGPT ou Gemini en version établissement, par exemple) peuvent offrir des garanties comparables : l'essentiel est d'utiliser l'outil validé par votre établissement, après avis de votre DPD/DPO.</p></div></div></section>
+
+<section id="fondamentaux"><div class="hd"><small>Comprendre l'IA</small><h2>Les fondamentaux de l'IA</h2><p>Comprendre ce qu'est une IA générative pour l'utiliser à bon escient, sans la surévaluer ni la craindre.</p></div>
+<div class="grid g2" id="fg"></div>
+<div class="card note"><div class="ic"><i data-lucide="lightbulb"></i></div><div><h3 style="font-size:18px">À retenir</h3><p style="margin:6px 0 0">L'IA est un assistant, pas une source d'autorité. L'enseignant reste responsable de la vérification, de la pertinence et de l'adaptation au contexte de sa classe. Le bon réflexe : vérifier, contextualiser, recadrer.</p></div></div></section>
+
+<section id="prompt-actif"><div class="hd"><small>Écrire de bons prompts</small><h2>Rédiger un prompt avec le modèle ACTIF</h2><p>ACTIF est une grille de structuration qui transforme une demande vague en une consigne précise et reproductible. Cinq piliers, à remplir dans l'ordre.</p></div>
+<div class="grid g5" id="pl"></div>
+<div class="card" style="margin-top:22px"><h3 style="font-size:20px">Générateur de prompt</h3><div id="gen"></div>
+<div style="margin-top:20px"><button class="btn" id="cp" style="background:var(--v);color:#fff;margin-left:0"><i data-lucide="copy"></i><span>Copier le prompt</span></button><button class="btn" id="rs" style="background:#fff;color:var(--v);border-color:var(--bd)"><i data-lucide="rotate-ccw"></i>Réinitialiser</button></div></div>
+<div class="card ex" style="margin-top:22px"><h3 style="font-family:Montserrat,sans-serif;font-size:17px;margin-bottom:10px">Exemple de prompt ACTIF complet</h3>【IDENTITÉ】 Tu dois agir comme un professeur d'histoire expérimenté en lycée professionnel.
+【CONTEXTE】 Tu enseignes à des élèves de 2nde professionnelle, 28 élèves au profil hétérogène, sur le thème de la Résistance pendant la Seconde Guerre mondiale.
+【ACTION】 Crée une séquence de 3 séances avec une évaluation formative en fin de chaque séance.
+【TONALITÉ】 Tu utiliseras un ton sérieux et bienveillant, adapté à des élèves fragiles.
+【FORMAT】 Tu donneras ta réponse au format Markdown, sous forme de tableau : Séance | Objectif | Activité | Support | Évaluation.</div></section>
+
+<section id="outils"><div class="hd"><small>Les outils au quotidien</small><h2>Perplexity &amp; Gemini NotebookLM</h2><p>Deux outils complémentaires : l'un explore le web et vérifie, l'autre synthétise vos propres documents. À utiliser selon l'objectif.</p></div>
+<div class="grid g2" id="tl"></div></section>
+
+<section id="creation"><div class="hd"><small>Créer des supports</small><h2>Gamma, Napkin AI et Treblo</h2><p>Trois outils pour transformer un contenu pédagogique en diaporama, en schéma ou en musique.</p></div>
+<div class="grid g2">
+<div class="card tool"><div class="top"><div class="ic" style="background:#7C3AED1a;color:#7C3AED"><i data-lucide="presentation"></i></div><div><h3>Gamma</h3><span style="color:var(--ts);font-size:13px">Générer des diapositives à partir d'une idée</span></div></div>
+<h4>Pourquoi l'utiliser ?</h4><ul>
+<li><i data-lucide="check-circle-2"></i><span>Génère un diaporama complet (plan, textes, mise en page, visuels) à partir d'une consigne, d'un plan ou d'un document importé.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Permet de retoucher le résultat avec l'IA : reformuler, changer de style, ajouter un visuel.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Export en PowerPoint (PPTX), PDF ou PNG, ou diffusion par lien web.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Une offre gratuite existe, avec un nombre limité de crédits IA ; les exports gratuits peuvent porter le filigrane « Made with Gamma ».</span></li></ul>
+<h4>Comment l'utiliser ?</h4><ol>
+<li><span>Crée un compte et choisis de générer à partir d'un texte ou d'un document.</span></li>
+<li><span>Colle ton plan de cours ou ton prompt ACTIF et précise le nombre de diapositives.</span></li>
+<li><span>Relis le plan proposé, choisis un thème, puis lance la génération.</span></li>
+<li><span>Affine avec l'assistant IA, puis exporte ou partage par lien.</span></li></ol>
+<h4>Vigilance</h4><ul><li><i data-lucide="shield-alert"></i><span>Relis chaque diapositive : le contenu et les images générés peuvent contenir des erreurs. Pas de données d'élèves.</span></li></ul>
+<a class="btn" style="background:#7C3AED" href="https://gamma.app" target="_blank" rel="noopener">Ouvrir Gamma<i data-lucide="external-link"></i></a></div>
+<div class="card tool"><div class="top"><div class="ic" style="background:#D977061a;color:#D97706"><i data-lucide="network"></i></div><div><h3>Napkin AI</h3><span style="color:var(--ts);font-size:13px">Transformer un texte en schéma ou en infographie</span></div></div>
+<h4>Pourquoi l'utiliser ?</h4><ul>
+<li><i data-lucide="check-circle-2"></i><span>Aucun prompt à écrire : tu colles ton texte, l'IA propose des schémas, cartes mentales, chronologies ou infographies.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Idéal pour accompagner un texte d'un support visuel : consigne, procédure, notion clé.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Les visuels restent modifiables (textes, couleurs, icônes).</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Une offre gratuite existe, avec des crédits hebdomadaires, des exports PNG et PDF et le logo Napkin sur les visuels ; l'export PPT ou SVG demande une offre payante.</span></li></ul>
+<h4>Comment l'utiliser ?</h4><ol>
+<li><span>Crée un compte, puis un nouveau document.</span></li>
+<li><span>Colle ou rédige ton texte, avec une idée par paragraphe.</span></li>
+<li><span>Clique sur l'icône étincelle pour générer des propositions de visuels.</span></li>
+<li><span>Choisis un visuel, ajuste-le, puis exporte-le pour l'insérer dans ton document ou ton diaporama.</span></li></ol>
+<h4>Vigilance</h4><ul><li><i data-lucide="shield-alert"></i><span>Vérifie que le schéma reflète fidèlement ton texte. Pas de données d'élèves.</span></li></ul>
+<a class="btn" style="background:#D97706" href="https://napkin.ai" target="_blank" rel="noopener">Ouvrir Napkin AI<i data-lucide="external-link"></i></a></div>
+<div class="card tool" style="grid-column:1/-1"><div class="top"><div class="ic" style="background:#DB27771a;color:#DB2777"><i data-lucide="music"></i></div><div><h3>Treblo (Sonauto)</h3><span style="color:var(--ts);font-size:13px">Générer des chansons et des musiques par IA</span></div></div>
+<h4>Pourquoi l'utiliser ?</h4><ul>
+<li><i data-lucide="check-circle-2"></i><span>Crée une chanson avec voix et paroles, ou un fond instrumental, à partir d'une simple description.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Tu peux écrire tes paroles ou les faire générer, et choisir parmi de nombreux styles musicaux.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Utile pour une chanson mnémotechnique, un jingle, une musique d'ambiance pour une vidéo ou un podcast pédagogique.</span></li>
+<li><i data-lucide="check-circle-2"></i><span>Des outils d'édition permettent de prolonger un morceau ou de modifier certaines sections ; l'application existe sur iOS et Android.</span></li></ul>
+<h4>Comment l'utiliser ?</h4><ol>
+<li><span>Ouvre Treblo (site ou application) et crée un compte.</span></li>
+<li><span>Décris ta chanson (thème, ambiance) et choisis un style, ou passe en mode avancé pour écrire les paroles et les étiquettes de style.</span></li>
+<li><span>Pour un simple fond sonore, choisis l'option instrumentale.</span></li>
+<li><span>Génère, écoute, ajuste ou prolonge, puis télécharge le morceau pour l'insérer dans ton diaporama ou ta vidéo.</span></li></ol>
+<h4>Vigilance</h4><ul><li><i data-lucide="shield-alert"></i><span>Lis les conditions d'utilisation et la politique de confidentialité sur treblo.com avant toute diffusion publique : l'application indique collecter certaines données liées à l'identité (localisation, contact, contenus). Ne saisis aucune donnée personnelle.</span></li></ul>
+<a class="btn" style="background:#DB2777" href="https://treblo.com" target="_blank" rel="noopener">Ouvrir Treblo<i data-lucide="external-link"></i></a></div></div>
+<div class="card note" style="margin-top:18px"><div class="ic"><i data-lucide="shield-alert"></i></div><div><h3 style="font-size:18px">Outils grand public : restez prudents</h3><p style="margin:6px 0 0">Ces trois outils ne sont pas nécessairement validés par votre établissement. N'y saisissez jamais de données personnelles d'élèves, de familles ou de collègues, et vérifiez leurs conditions d'utilisation avant tout usage professionnel.</p></div></div></section>
+
+<section id="personnalisation"><div class="hd"><small>Aller plus loin</small><h2>Personnaliser ChatGPT, Gemini et Copilot</h2><p>Régler ses préférences une seule fois pour ne plus avoir à tout réexpliquer à chaque conversation.</p></div>
+<div class="card note" style="margin-top:0"><div class="ic"><i data-lucide="help-circle"></i></div><div><h3 style="font-size:18px">Pourquoi les paramétrer ?</h3><ul style="list-style:none;padding:0;margin:8px 0 0">
+<li style="margin:6px 0">• <b>Gagner du temps</b> : plus besoin de répéter votre matière, votre niveau ou votre façon de travailler.</li>
+<li style="margin:6px 0">• <b>Obtenir des réponses cohérentes</b> avec votre pratique : ton, vocabulaire, structure, format.</li>
+<li style="margin:6px 0">• <b>Éviter les mauvais cadrages</b> : français, programmes et contexte scolaire de votre choix.</li>
+<li style="margin:6px 0">• <b>Prolonger le modèle ACTIF</b> : l'identité, le contexte, la tonalité et le format sont posés une fois pour toutes.</li></ul></div></div>
+<div class="grid g2" style="margin-top:18px">
+<div class="card tool"><div class="top"><div class="ic" style="background:#10A37F1a;color:#10A37F"><i data-lucide="message-circle"></i></div><div><h3>ChatGPT</h3><span style="color:var(--ts);font-size:13px">Instructions, style et mémoire</span></div></div>
+<h4>Comment faire ?</h4><ol>
+<li><span>Ouvre tes paramètres, rubrique « Personnalisation ».</span></li>
+<li><span>Dans les instructions personnalisées, indique qui tu es et ce que l'IA doit savoir de toi, puis comment elle doit répondre.</span></li>
+<li><span>Choisis le style ou la personnalité des réponses (plus direct, plus chaleureux…).</span></li>
+<li><span>Consulte la mémoire : active-la, relis ce qui est retenu et supprime ce qui n'est plus utile.</span></li>
+<li><span>Pour un usage récurrent (une classe, un projet), crée un Projet avec ses propres consignes.</span></li></ol></div>
+<div class="card tool"><div class="top"><div class="ic" style="background:#1E5AE01a;color:#1E5AE0"><i data-lucide="gem"></i></div><div><h3>Gemini</h3><span style="color:var(--ts);font-size:13px">Instructions, infos enregistrées et Gems</span></div></div>
+<h4>Comment faire ?</h4><ol>
+<li><span>Ouvre les paramètres et cherche les « Instructions pour Gemini » (ou informations enregistrées).</span></li>
+<li><span>Renseigne ton rôle, ton niveau d'enseignement et tes préférences de réponse.</span></li>
+<li><span>Crée un Gem : un assistant avec des consignes permanentes (ex. « Concepteur de fiches de cours »).</span></li>
+<li><span>Vérifie ce que Gemini conserve de tes conversations et supprime ce que tu ne veux pas garder.</span></li>
+<li><span>Relis et mets à jour tes instructions de temps en temps.</span></li></ol></div></div>
+<div class="card tool" style="margin-top:18px"><div class="top"><div class="ic" style="background:#0F6CBD1a;color:#0F6CBD"><i data-lucide="bot"></i></div><div><h3>Copilot dans Microsoft 365</h3><span style="color:var(--ts);font-size:13px">Instructions personnalisées et mémoire</span></div></div>
+<h4>Pourquoi ?</h4><ul><li><i data-lucide="check-circle-2"></i><span>Indiquer une fois votre fonction, votre ton et le format de vos documents (courriers, comptes rendus, tableaux).</span></li><li><i data-lucide="check-circle-2"></i><span>Garder ces réglages dans l'environnement protégé de votre compte professionnel.</span></li></ul>
+<h4>Comment faire ?</h4><ol>
+<li><span>Ouvre Copilot Chat en te connectant avec ton compte professionnel ou scolaire Microsoft 365.</span></li>
+<li><span>En haut à droite, ouvre le menu « … », puis « Paramètres ».</span></li>
+<li><span>Dans le menu de gauche, choisis « Personnalisation ».</span></li>
+<li><span>Sur la tuile « Instructions personnalisées », clique sur « Modifier les instructions » : indique ce que Copilot doit savoir de toi et comment présenter ses réponses, puis enregistre.</span></li>
+<li><span>Consulte la mémoire de Copilot : tu peux voir, modifier ou supprimer ce qu'il retient, ou la désactiver. Elle n'est disponible que si ton établissement l'a activée.</span></li></ol></div>
+<div class="card ex" style="margin-top:18px"><h3 style="font-family:Montserrat,sans-serif;font-size:17px;margin-bottom:10px">Exemple d'instruction à copier</h3>Je suis enseignant en lycée professionnel (histoire-géographie). Réponds en français, avec un ton bienveillant, et vouvoie-moi. Structure tes réponses avec des titres courts. Si le contexte te manque, pose-moi des questions avant de répondre. Ne me demande jamais de données personnelles sur mes élèves.</div>
+<div class="card note" style="margin-top:18px"><div class="ic"><i data-lucide="shield-alert"></i></div><div><h3 style="font-size:18px">Vigilance</h3><p style="margin:6px 0 0">N'enregistre jamais de données personnelles d'élèves (noms, situations individuelles) dans ces réglages. Les intitulés des menus évoluent régulièrement : si tu ne trouves pas une option, cherche le mot « personnalisation » ou « instructions » dans les paramètres.</p></div></div></section>
+<section id="metaprompt"><div class="hd"><small>Passer à la pratique</small><h2>Méta-prompt et banque de prompts</h2><p>Demander à l'IA de rédiger le prompt à votre place, puis piocher dans des prompts prêts à l'emploi selon votre métier.</p></div>
+<div class="card note" style="margin-top:0"><div class="ic"><i data-lucide="wand-2"></i></div><div><h3 style="font-size:18px">Le méta-prompt : un prompt qui écrit le prompt</h3>
+<p style="margin:6px 0 0">Au lieu de rédiger vous-même la consigne, vous demandez à l'IA de vous interviewer, puis de produire un prompt structuré (par exemple selon le modèle ACTIF) que vous pourrez réutiliser.</p>
+<ul style="list-style:none;padding:0;margin:10px 0 0"><li style="margin:6px 0">• <b>Pourquoi ?</b> Vous n'avez pas à penser à tous les éléments : l'IA pose les questions qui manquent.</li>
+<li style="margin:6px 0">• <b>Comment ?</b> Collez le méta-prompt, répondez aux questions une par une, puis copiez le prompt final dans une nouvelle conversation.</li>
+<li style="margin:6px 0">• <b>À garder en tête :</b> relisez toujours le prompt obtenu avant de l'utiliser, et ajustez-le.</li></ul></div></div>
+<div class="card ex" style="margin-top:18px"><h3 style="font-family:Montserrat,sans-serif;font-size:17px;margin-bottom:10px">Exemple de méta-prompt</h3>Tu es un expert en ingénierie de prompts. Je souhaite obtenir de l'aide pour : [décris ta tâche]. Pose-moi, une question à la fois, toutes les questions nécessaires (identité attendue, contexte, action, tonalité, format). Quand tu as assez d'informations, rédige un prompt structuré selon le modèle ACTIF que je pourrai copier-coller, puis propose-moi de l'améliorer.</div>
+<div class="card" style="margin-top:18px"><h3 style="font-size:20px">Banque de prompts</h3><p style="margin:6px 0 0;font-size:14px">Choisissez votre rôle, puis le type de ressource. Remplacez les éléments entre [crochets] par vos informations. Ne saisissez jamais de données personnelles d'élèves ou de collègues.</p>
+<label for="rl">Votre rôle</label>
+<select id="rl"><option value="ens">Enseignants</option><option value="dir">Personnels de direction</option><option value="vs">Personnels de vie scolaire</option><option value="adm">Personnels administratifs</option></select>
+<div class="tabs"><button id="tp" class="on">Prompts prêts à l'emploi</button><button id="tm">Méta-prompts</button></div><div id="bk"></div></div></section>
+</main>
+<footer>Synthèse de formation · Intelligence artificielle en éducation · À destination des enseignants</footer>
+<script>
+const $=s=>document.querySelector(s);
+const secs=[["accueil","Accueil","home"],["donnees","Protection des données","shield-check"],["fondamentaux","Fondamentaux","brain"],["prompt-actif","Prompt ACTIF","wand-2"],["outils","Outils","wrench"],["creation","Créer des supports","palette"],["personnalisation","Personnalisation","user-cog"],["metaprompt","Méta-prompt & banque","library"]];
+secs.forEach(([id,l,i])=>{for(const t of ["#sn","#mn"])$(t).insertAdjacentHTML("beforeend",`<a href="#${id}" data-s="${id}"><i data-lucide="${i}" style="width:18px;height:18px"></i>${l}</a>`)});
+$("#mb").onclick=()=>$("#mn").classList.toggle("open");
+$("#mn").onclick=()=>$("#mn").classList.remove("open");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll("[data-s]").forEach(a=>a.classList.toggle("on",a.dataset.s===e.target.id))}),{rootMargin:"-30% 0px -60% 0px"});
+secs.forEach(([id])=>io.observe(document.getElementById(id)));
+const F=[["brain","Qu'est-ce qu'un LLM ?","Un Grand Modèle de Langage (Large Language Model) est un système entraîné sur des milliards de textes qui prédit le mot le plus probable à la suite du précédent. Il ne « sait » pas : il calcule des probabilités."],
+["database","Entraînement & données","Le modèle apprend des régularités statistiques dans un immense corpus de textes. Sa qualité dépend de la diversité et du volume des données d'entraînement — et de leurs biais."],
+["message-square","Le prompt = la consigne","L'IA répond à ce qu'on lui demande. Un prompt vague produit une réponse vague ; un prompt structuré et précis produit un résultat exploitable. C'est la compétence clé de l'enseignant."],
+["alert-triangle","Limites & hallucinations","L'IA peut inventer des faits plausibles mais faux (hallucinations). Elle n'a pas de jugement, pas de mémoire fiable entre les sessions, et aucune compréhension réelle du sens."]];
+$("#fg").innerHTML=F.map(f=>`<div class="card"><div class="ic"><i data-lucide="${f[0]}"></i></div><h3 style="font-size:17px">${f[1]}</h3><p style="margin:8px 0 0">${f[2]}</p></div>`).join("");
+const P=[["A","Action","#E67E22","L'action que l'IA doit effectuer : résumer, créer, expliquer…","Ex. : Crée une séquence de 3 séances avec une évaluation formative à chaque séance."],
+["C","Contexte","#2E7D32","Le public visé : niveau, matière, situation d'enseignement.","Ex. : 28 élèves de 2nde pro, profils hétérogènes, thème de la Résistance."],
+["T","Tonalité","#8E24AA","Le ton attendu de la réponse : sérieux, pédagogique, ludique…","Ex. : Ton sérieux et bienveillant, adapté à des élèves fragiles."],
+["I","Identité","#D32F2F","Le rôle que doit tenir l'IA : professeur, tuteur, expert…","Ex. : Professeur d'histoire expérimenté en lycée professionnel."],
+["F","Format","#1E5AE0","La forme de la sortie : Markdown, tableau, liste, plan…","Ex. : Tableau Markdown : Séance | Objectif | Activité | Support | Évaluation."]];
+$("#pl").innerHTML=P.map(p=>`<div class="card pil"><div class="c" style="background:${p[2]}">${p[0]}</div><h3>${p[1]}</h3><p>${p[3]}</p></div>`).join("");
+$("#gen").innerHTML=P.map((p,i)=>`<label style="color:${p[2]}">${p[0]} · ${p[1]}</label><small class="h">${p[3]}</small><textarea data-i="${i}" placeholder="${p[4]} Donne des détails précis."></textarea><div class="pv" id="pv${i}"></div>`).join("");
+const L=["ACTION","CONTEXTE","TONALITÉ","IDENTITÉ","FORMAT"],order=[3,1,0,2,4];
+const REM="Si le contexte te manque, pose-moi des questions de clarification avant de répondre. Indique-moi aussi quels documents ou pièces jointes seraient utiles pour affiner ta réponse.";
+const tas=[...document.querySelectorAll("textarea")];
+function build(){let out=[];tas.forEach((t,i)=>{const v=t.value.trim(),b=$("#pv"+i);b.style.display=v?"block":"none";b.textContent="【"+L[i]+"】 "+v});
+order.forEach(i=>{const v=tas[i].value.trim();if(v)out.push("【"+L[i]+"】 "+v)});return out.length?out.join("\n")+"\n\n"+REM:""}
+tas.forEach(t=>t.oninput=build);
+$("#cp").onclick=async()=>{const s=build(),b=$("#cp span");if(!s){b.textContent="Remplis au moins un champ";}else{try{await navigator.clipboard.writeText(s);b.textContent="Copié !"}catch(e){b.textContent="Copie impossible"}}setTimeout(()=>b.textContent="Copier le prompt",1800)};
+$("#rs").onclick=()=>{tas.forEach(t=>t.value="");build()};
+const T=[["search","#20808D","Perplexity","Le moteur de recherche augmenté","https://www.perplexity.ai",
+["Réponses sourcées avec citations cliquables et vérifiables.","Accès à des informations récentes et à jour (recherche web en temps réel).","Idéal pour préparer un cours sur l'actualité, vérifier un fait, explorer un sujet nouveau.","Permet de distinguer une source fiable d'une source douteuse."],
+["Saisis une question naturelle dans la barre de recherche.","Précise le niveau de détail voulu (concis / détaillé).","Clique sur « Focus » pour cibler une source (web, académique, YouTube…).","Vérifie les sources affichées sous chaque affirmation."]],
+["notebook-pen","#5E2F96","Gemini NotebookLM","Le synthétiseur de vos documents","https://notebooklm.google.com",
+["Crée une base de connaissance personnelle à partir de VOS documents (PDF, cours, textes).","L'IA répond uniquement à partir de vos sources : pas d'hallucination hors corpus.","Génère automatiquement résumés, fiches, questions de révision, guides d'étude.","Transforme un document en podcast audio (Audio Overview) pour réviser autrement."],
+["Crée un nouveau notebook.","Importe tes sources (PDF, Google Doc, texte, lien YouTube…).","Pose tes questions dans le chat : les réponses citent tes documents.","Utilise les « Notes Studio » pour générer fiches, FAQ, ou résumé audio."]]];
+$("#tl").innerHTML=T.map(t=>`<div class="card tool"><div class="top"><div class="ic" style="background:${t[1]}1a;color:${t[1]}"><i data-lucide="${t[0]}"></i></div><div><h3>${t[2]}</h3><span style="color:var(--ts);font-size:13px">${t[3]}</span></div></div>
+<h4>Pourquoi l'utiliser ?</h4><ul>${t[5].map(x=>`<li><i data-lucide="check-circle-2"></i><span>${x}</span></li>`).join("")}</ul>
+<h4>Comment l'utiliser ?</h4><ol>${t[6].map(x=>`<li><span>${x}</span></li>`).join("")}</ol>
+<a class="btn" style="background:${t[1]}" href="${t[4]}" target="_blank" rel="noopener">Ouvrir ${t[2]}<i data-lucide="external-link"></i></a></div>`).join("");
+const H=485088417125922;
+function hx(s){let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0,c;i<s.length;i++){c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)}
+function chk(){const v=$("#pw").value.trim().toLowerCase();
+if(hx(v)===H){document.documentElement.classList.remove("locked");try{sessionStorage.setItem("sph","1")}catch(e){}try{lucide.createIcons()}catch(e){}}else{$("#er").textContent="Mot de passe incorrect.";$("#pw").value=""}}
+$("#go").onclick=chk;$("#pw").addEventListener("keydown",e=>{if(e.key==="Enter")chk()});
+const M="Tu es un expert en ingénierie de prompts. Je souhaite obtenir de l'aide pour : ";
+const Q=" Pose-moi une question à la fois pour recueillir le contexte, le public, les contraintes, la tonalité et le format attendus. Puis rédige un prompt structuré selon le modèle ACTIF que je pourrai copier-coller.";
+const B={ens:[[["Séquence pédagogique","【IDENTITÉ】 Tu es un professeur expert en [discipline]. 【CONTEXTE】 Classe de [niveau], [effectif] élèves, thème : [thème]. 【ACTION】 Propose une séquence de [n] séances avec objectifs, activités et évaluation formative. 【TONALITÉ】 Clair et bienveillant. 【FORMAT】 Tableau Markdown : Séance | Objectif | Activité | Évaluation."],["Différenciation d'un exercice","【IDENTITÉ】 Tu es un enseignant spécialisé dans l'inclusion. 【CONTEXTE】 Voici un exercice de [discipline] pour une classe de [niveau] : [colle l'exercice]. 【ACTION】 Propose trois versions (soutien, standard, approfondissement) avec des consignes simplifiées et des aides graduées. 【TONALITÉ】 Encourageant. 【FORMAT】 Trois blocs titrés."],["QCM avec corrigé","【IDENTITÉ】 Tu es un concepteur d'évaluations. 【CONTEXTE】 Notion : [notion], niveau [niveau]. 【ACTION】 Crée un QCM de 10 questions avec 4 propositions, le corrigé commenté et un barème. 【TONALITÉ】 Neutre. 【FORMAT】 Tableau Markdown puis corrigé."],["Appréciation de bulletin","【IDENTITÉ】 Tu es un professeur principal bienveillant. 【CONTEXTE】 Éléments anonymes : [points forts], [difficultés], [progrès observés]. 【ACTION】 Rédige trois propositions d'appréciation de 2 phrases, tournées vers les progrès à venir. 【TONALITÉ】 Positive et honnête. 【FORMAT】 Liste numérotée."]],[["Créer mon prompt de cours",M+"préparer un cours ou une séquence."+Q],["Améliorer un prompt existant","Tu es un expert en ingénierie de prompts. Voici mon prompt : [colle ton prompt]. Analyse ses points faibles au regard du modèle ACTIF, pose-moi les questions qui manquent, puis propose une version améliorée."]]],
+dir:[[["Note de service","【IDENTITÉ】 Tu es un chef d'établissement. 【CONTEXTE】 Objet : [objet], destinataires : [équipe], date d'effet : [date]. 【ACTION】 Rédige une note de service claire avec contexte, consignes et échéances. 【TONALITÉ】 Institutionnelle et courtoise. 【FORMAT】 Note d'une page."],["Compte rendu de réunion","【IDENTITÉ】 Tu es un secrétaire de séance rigoureux. 【CONTEXTE】 Voici mes notes brutes : [colle les notes]. 【ACTION】 Rédige un compte rendu structuré : décisions, actions, responsables, échéances. 【TONALITÉ】 Neutre. 【FORMAT】 Titres courts et tableau des actions."],["Message aux familles","【IDENTITÉ】 Tu es un chef d'établissement soucieux du dialogue avec les familles. 【CONTEXTE】 Sujet : [changement d'organisation, événement…]. 【ACTION】 Rédige un message court, clair et rassurant. 【TONALITÉ】 Bienveillante. 【FORMAT】 Courrier de 150 mots maximum."],["Synthèse du projet d'établissement","【IDENTITÉ】 Tu es un conseiller en pilotage d'établissement. 【CONTEXTE】 Axes prioritaires : [axes]. 【ACTION】 Propose pour chaque axe un objectif, trois actions et un indicateur de suivi. 【TONALITÉ】 Professionnelle. 【FORMAT】 Tableau Markdown."]],[["Construire un plan d'action",M+"construire un plan d'action pour mon établissement."+Q],["Adapter un document officiel",M+"reformuler un texte réglementaire pour mon équipe. Demande-moi le texte, le public visé et le niveau de détail souhaité, puis rédige le prompt."]]],
+vs:[[["Message aux familles (absences)","【IDENTITÉ】 Tu es un CPE bienveillant. 【CONTEXTE】 Situation : absences répétées d'un élève (sans nom ni détail personnel). 【ACTION】 Rédige un message qui invite la famille au dialogue sans la culpabiliser. 【TONALITÉ】 Respectueuse et ouverte. 【FORMAT】 Courrier de 120 mots."],["Règlement intérieur accessible","【IDENTITÉ】 Tu es un spécialiste de la communication éducative. 【CONTEXTE】 Voici un extrait du règlement : [colle l'extrait]. 【ACTION】 Reformule-le en langage simple pour des élèves de [niveau], avec un exemple concret par règle. 【TONALITÉ】 Positive. 【FORMAT】 Liste courte."],["Trame d'entretien avec un élève","【IDENTITÉ】 Tu es un CPE formé à la médiation. 【CONTEXTE】 Motif : [retards, conflit entre pairs…]. 【ACTION】 Propose une trame d'entretien en 5 étapes avec des questions ouvertes et une conclusion tournée vers des solutions. 【TONALITÉ】 Calme. 【FORMAT】 Liste numérotée."],["Atelier prévention","【IDENTITÉ】 Tu es un concepteur d'actions éducatives. 【CONTEXTE】 Thème : [harcèlement, usage du numérique…], public : [niveau], durée : [durée]. 【ACTION】 Conçois un atelier avec déroulé, activités et supports. 【TONALITÉ】 Dynamique. 【FORMAT】 Tableau : Temps | Activité | Matériel."]],[["Préparer une action éducative",M+"préparer une action de vie scolaire."+Q],["Rédiger un protocole",M+"rédiger un protocole simple pour mon équipe de vie scolaire. Demande-moi la situation, les étapes et les personnes concernées."]]],
+adm:[[["Courrier type aux familles","【IDENTITÉ】 Tu es un agent administratif d'établissement scolaire. 【CONTEXTE】 Objet : [inscription, pièces à fournir, dates…]. 【ACTION】 Rédige un courrier type clair avec les démarches à suivre. 【TONALITÉ】 Courtoise et précise. 【FORMAT】 Courrier avec objet et formule de politesse."],["Fiche pratique réglementaire","【IDENTITÉ】 Tu es un rédacteur de documentation administrative. 【CONTEXTE】 Voici un texte : [colle le texte]. 【ACTION】 Résume-le en fiche pratique : points clés, échéances, démarches. 【TONALITÉ】 Neutre. 【FORMAT】 Une page, titres courts."],["Mail de relance","【IDENTITÉ】 Tu es un agent administratif courtois. 【CONTEXTE】 Document attendu : [document], échéance : [date]. 【ACTION】 Rédige un mail de relance poli et précis. 【TONALITÉ】 Professionnelle. 【FORMAT】 Mail de 80 mots maximum."],["Procédure pas à pas","【IDENTITÉ】 Tu es un formateur en procédures. 【CONTEXTE】 Tâche : [tâche], outil : [logiciel]. 【ACTION】 Rédige un tutoriel numéroté, avec les erreurs fréquentes à éviter. 【TONALITÉ】 Simple. 【FORMAT】 Liste numérotée."]],[["Créer un modèle de document",M+"créer un modèle de document administratif."+Q],["Simplifier un courrier",M+"rendre un courrier administratif plus lisible. Demande-moi le courrier, le public visé et le ton souhaité."]]]};
+let rk="p";
+function rb(){const l=B[$("#rl").value][rk==="p"?0:1];$("#tp").classList.toggle("on",rk==="p");$("#tm").classList.toggle("on",rk==="m");
+$("#bk").innerHTML=l.map((x,i)=>`<div class="pc"><h4>${x[0]}</h4><div class="tx"></div><button class="btn" data-i="${i}">Copier</button></div>`).join("");
+$("#bk").querySelectorAll(".tx").forEach((e,i)=>e.textContent=l[i][1])}
+$("#rl").onchange=rb;$("#tp").onclick=()=>{rk="p";rb()};$("#tm").onclick=()=>{rk="m";rb()};
+$("#bk").onclick=async e=>{const b=e.target.closest("button[data-i]");if(!b)return;const t=B[$("#rl").value][rk==="p"?0:1][+b.dataset.i][1];try{await navigator.clipboard.writeText(t);b.textContent="Copié !"}catch(x){b.textContent="Copie impossible"}setTimeout(()=>b.textContent="Copier",1800)};
+rb();
+try{lucide.createIcons()}catch(e){}
+</script></body></html>
